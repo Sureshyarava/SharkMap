@@ -51,8 +51,8 @@ function GoogleMapComponent() {
       latLngBounds: {
         north: 85,   
         south: -85,  
-        east: 179.99999999,   
-        west: -179.9999999,  
+        east: 180,   
+        west: -180,  
       },
       strictBounds: true  
     },
@@ -81,7 +81,7 @@ function GoogleMapComponent() {
       {
         featureType: 'water',
         elementType: 'all',
-        stylers: [{ color: '#8ed1fc' }] // Blue water
+        stylers: [{ color: '#7ec8e3' }] // Blue water
       },
       {
         featureType: 'road',
