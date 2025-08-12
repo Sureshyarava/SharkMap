@@ -73,6 +73,28 @@ function GoogleMapComponent() {
         elementType: 'labels',
         stylers: [{ visibility: 'off' }]
       },
+      // Show country labels
+      {
+        featureType: 'administrative.country',
+        elementType: 'labels.text',
+        stylers: [
+          { visibility: 'on' },
+          { color: '#2c3e50' },
+          { weight: 'bold' },
+          { fontSize: '14px' }
+        ]
+      },
+      
+      {
+        featureType: 'administrative.country',
+        elementType: 'labels.text.stroke',
+        stylers: [
+          { visibility: 'on' },
+          { color: '#ffffff' },
+          { weight: 2 }
+        ]
+      },
+    
       {
         featureType: 'landscape',
         elementType: 'all',
@@ -88,15 +110,38 @@ function GoogleMapComponent() {
         elementType: 'all',
         stylers: [{ visibility: 'off' }] // Hide roads
       },
+      // Show country borders
       {
-        featureType: 'administrative',
-        elementType: 'all',
-        stylers: [{ visibility: 'off' }] // Hide administrative boundaries
+        featureType: 'administrative.country',
+        elementType: 'geometry.stroke',
+        stylers: [
+          { visibility: 'on' },
+          { color: '#95a5a6' },
+          { weight: 1 }
+        ]
       },
       {
         featureType: 'poi',
         elementType: 'all',
         stylers: [{ visibility: 'off' }] // Hide points of interest
+      },
+      // Hide world boundaries and coordinate lines
+      {
+        featureType: 'administrative',
+        elementType: 'geometry',
+        stylers: [{ visibility: 'off' }]
+      },
+      // Hide equator and other coordinate lines
+      {
+        featureType: 'transit',
+        elementType: 'geometry',
+        stylers: [{ visibility: 'off' }]
+      },
+      // Hide any remaining geographic lines
+      {
+        featureType: 'all',
+        elementType: 'geometry.stroke',
+        stylers: [{ visibility: 'simplified' }]
       }
     ]
   };
